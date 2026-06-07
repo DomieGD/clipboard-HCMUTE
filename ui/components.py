@@ -23,7 +23,7 @@ maxPreviewChars = 200
 
 
 def _IconBtn(iconPath: str, tooltip: str, objectName: str) -> QPushButton:
-    """Tạo một QPushButton dạng ô vuông chỉ có icon lấy từ file SVG."""
+    # Tạo một QPushButton dạng ô vuông chỉ có icon lấy từ file SVG.
     btn = QPushButton()
     btn.setIcon(QIcon(iconPath))
     btn.setIconSize(iconSize)
@@ -36,7 +36,7 @@ def _IconBtn(iconPath: str, tooltip: str, objectName: str) -> QPushButton:
 
 
 class ClickableLabel(QLabel):
-    """Nhãn hiển thị hình ảnh có khả năng nhận diện sự kiện click chuột trái để phóng to ảnh."""
+    # Nhãn hiển thị hình ảnh có khả năng nhận diện sự kiện click chuột trái để phóng to ảnh.
     def __init__(self, callback, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self._callback = callback
@@ -49,7 +49,7 @@ class ClickableLabel(QLabel):
 
 
 class ClipboardCard(QFrame):
-    """Thẻ hiển thị thông tin của từng bản ghi clipboard (Văn bản hoặc hình ảnh)."""
+    # Thẻ hiển thị thông tin của từng bản ghi clipboard (Văn bản hoặc hình ảnh).
     def __init__(self, itemId, itemType, content, timestamp, isPinned,
                  onPinCallback, onCopyCallback, onDeleteCallback):
         super().__init__()
@@ -147,7 +147,7 @@ class ClipboardCard(QFrame):
         self.btnCopy.setText("Sao chép")
         self.btnCopy.setStyleSheet("")
 
-    # ── delete (with guard for pinned items) ──────────────
+    # ── delete ──────────────────────────────────────────────
     def DeleteClicked(self):
         # Cảnh báo xác nhận nếu người dùng cố gắng xóa một mục đang được ghim
         if self.isPinned:
@@ -244,7 +244,7 @@ class ClipboardCard(QFrame):
                 return
         self.onDeleteCallback(self.itemId)
 
-    # ── full-content popup ─────────────────────────────────
+    # ── popup ──────────────────────────────────────────────
     def ShowFullPopup(self):
         # Hiển thị cửa sổ phụ phóng to nội dung văn bản hoặc hình ảnh gốc
         # Kiểm tra chế độ tối/sáng của ứng dụng
