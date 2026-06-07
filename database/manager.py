@@ -132,7 +132,7 @@ def RenameDatabase(oldName: str, newName: str) -> str:
 # ───────────────────────────────────────────────────────────────────────────
 
 def LoadSettings() -> dict:
-    """Trả về dict cài đặt cấu hình từ settings.json, hoặc mặc định nếu chưa có."""
+    # Trả về dict cài đặt cấu hình từ settings.json, hoặc mặc định nếu chưa có.
     defaultDb = FirstName() or "Cá Nhân"
     defaultSettings = {
         "theme": "Theo Hệ Thống",
@@ -154,7 +154,7 @@ def LoadSettings() -> dict:
 
 
 def SaveSettings(theme: str, sort: str, database: str):
-    """Lưu cài đặt theme, sort và database hiện tại vào settings.json."""
+    # Lưu cài đặt theme, sort và database hiện tại vào settings.json.
     try:
         with open(settingsFile, "w", encoding="utf-8") as f:
             json.dump({
