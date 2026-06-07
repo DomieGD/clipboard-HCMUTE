@@ -53,7 +53,7 @@ class DatabaseHandler:
         return True
 
     def InsertImage(self, blobData, timestamp):
-        # [MỚI] Kiểm tra xem ảnh mới có bị trùng hoàn toàn với ảnh vừa lưu gần nhất không
+        # Kiểm tra xem ảnh mới có bị trùng hoàn toàn với ảnh vừa lưu gần nhất không
         self.cursor.execute("SELECT content FROM clipboard_history WHERE type='image' ORDER BY id DESC LIMIT 1")
         lastRow = self.cursor.fetchone()
         if lastRow and lastRow[0] == blobData:
@@ -65,7 +65,7 @@ class DatabaseHandler:
         return True
 
     def GetHistory(self, sortType):
-        """Lấy dữ liệu đã lọc và sắp xếp (Luôn ưu tiên Ghim lên đầu)"""
+        # Lấy dữ liệu đã lọc và sắp xếp (Luôn ưu tiên Ghim lên đầu)
         query = "SELECT id, type, content, timestamp, is_pinned FROM clipboard_history"
         conditions = []
         
