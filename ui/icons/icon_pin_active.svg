@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#F1C40F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Pin needle going down -->
+  <line x1="12" y1="17" x2="12" y2="22"/>
+  <!-- Pin clip/clamp bar -->
+  <line x1="8" y1="12" x2="16" y2="12"/>
+  <!-- Pin body diamond shape - filled yellow -->
+  <path d="M8 12 L9 5 L15 5 L16 12 Z" fill="#F1C40F" stroke="#F1C40F"/>
+  <!-- Pin head circle - filled yellow -->
+  <circle cx="12" cy="4" r="1.5" fill="#F1C40F" stroke="none"/>
+</svg>
